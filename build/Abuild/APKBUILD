@@ -6,7 +6,7 @@ pkgname=perl-http-cookiejar
 #_pkgreal is used by apkbuild-cpan to find modules at MetaCpan
 _pkgreal=HTTP-CookieJar
 pkgver=0.014
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="minimalist HTTP user agent cookie jar"
 url="https://metacpan.org/release/HTTP-CookieJar/"
 arch="noarch"
@@ -34,6 +34,7 @@ package() {
 }
 
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 98e6834574e28d8e278ba6f23817d7a4b0a072fea144f97db78e20881f622c01ddf4edff1dc5563c0fc46b22ba94fd9acfd18c9c81118c8c18c7d810f7534467  HTTP-CookieJar-0.014.tar.gz
 "
